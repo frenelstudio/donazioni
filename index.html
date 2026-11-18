@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sostieni il cinema indipendente · Frenél Studio</title>
+  <meta name="description" content="Frenél Studio porta in sala il cinema indipendente e ne produce di nuovo. Sostienici con una donazione.">
+  <meta name="theme-color" content="#bf2626">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sostieni il cinema indipendente · Frenél Studio">
+  <meta property="og:description" content="Serate al cinema, nuove produzioni, una sede tutta nostra. Sostienici con una donazione.">
+  <meta property="og:url" content="https://frenelstudio.github.io/donazioni/">
+  <meta property="og:image" content="https://frenelstudio.github.io/donazioni/assets/og.png">
+  <meta property="og:locale" content="it_IT">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/urbanist-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main class="pagina">
+    <img class="logo" src="assets/marchio-w.svg" alt="Frenél Studio" width="168" height="150">
+
+    <p class="serata" id="serata" hidden></p>
+
+    <h1>Sostieni il cinema indipendente</h1>
+    <p class="attacco">Ogni film ha bisogno di qualcuno che accenda il proiettore.</p>
+    <p class="testo">Frenél Studio è un'associazione torinese di registi, tecnici e autori. Portiamo in sala il cinema indipendente e ne produciamo di nuovo. Con il tuo contributo possiamo:</p>
+    <ul class="usi">
+      <li>organizzare nuove serate al cinema</li>
+      <li>realizzare i nostri film, a partire da <strong>FINIS</strong></li>
+      <li>aprire una sede: uno spazio dove il cinema si fa e si guarda</li>
+    </ul>
+
+    <p class="passo">1 · Scegli l'importo</p>
+    <div class="importi" id="importi" role="group" aria-label="Importo della donazione"></div>
+    <div class="libero" id="libero-box">
+      <label for="libero">Importo libero</label>
+      <input id="libero" type="text" inputmode="decimal" maxlength="7" autocomplete="off" aria-describedby="errore">
+      <span class="euro" aria-hidden="true">€</span>
+    </div>
+    <p class="errore" id="errore" role="alert" hidden></p>
+
+    <p class="passo">2 · Scegli come donare</p>
+    <div class="metodi">
+      <button class="metodo" type="button" id="btn-satispay" aria-controls="pannello-satispay">
+        <strong>Satispay</strong>
+        <span>Dall'app, in pochi secondi</span>
+      </button>
+
+      <div class="pannello-satispay" id="pannello-satispay" hidden>
+        <p class="grande">Apri Satispay e inserisci <span id="importo-satispay"></span></p>
+        <p class="nota">Il pagamento arriva sul conto Satispay di Andrea D'Eredità, legale rappresentante di Frenél Studio.</p>
+        <div class="azioni">
+          <a class="metodo" id="apri-satispay" href="#" target="_blank" rel="noopener">
+            <strong>Apri Satispay</strong>
+          </a>
+          <a class="secondario" href="grazie.html">Ho donato</a>
+        </div>
+      </div>
+
+      <button class="metodo" type="button" data-paypal>
+        <strong>PayPal</strong>
+        <span>Con il tuo conto PayPal</span>
+      </button>
+
+      <button class="metodo" type="button" data-paypal>
+        <strong>Carta di credito o debito</strong>
+        <span>Su PayPal, senza bisogno di un account</span>
+      </button>
+    </div>
+    <p class="sicuro">Con la carta, su PayPal scegli “Paga con carta di debito o di credito”. I pagamenti avvengono sulle pagine sicure di Satispay e PayPal: questa pagina non vede né salva i tuoi dati.</p>
+
+    <div class="social">
+      <p>Seguici</p>
+      <a class="social-link" data-social="instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram di Frenél Studio">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>
+      </a>
+      <a class="social-link" data-social="youtube" href="#" target="_blank" rel="noopener" aria-label="Canale YouTube di Frenél Studio">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+    </div>
+
+    <footer>
+      <p>Frenél Studio · Associazione non riconosciuta · CF&nbsp;97922350018 · Torino</p>
+      <p>Le donazioni sono erogazioni liberali e non sono fiscalmente deducibili.</p>
+    </footer>
+  </main>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

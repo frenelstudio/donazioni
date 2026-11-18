@@ -1,0 +1,283 @@
+@font-face {
+  font-family: "Urbanist";
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/urbanist-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Urbanist";
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/urbanist-latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Urbanist";
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/urbanist-latin-700-normal.woff2") format("woff2");
+}
+
+:root {
+  --rosso: #bf2626;
+  --bianco: #ffffff;
+  --bianco-80: rgba(255, 255, 255, 0.82);
+  --bianco-60: rgba(255, 255, 255, 0.62);
+  --bianco-20: rgba(255, 255, 255, 0.2);
+  --raggio: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--rosso);
+  color: var(--bianco);
+  font-family: "Urbanist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+.pagina {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 28px 22px 32px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.logo {
+  display: block;
+  width: 168px;
+  height: auto;
+  margin: 8px auto 28px;
+}
+
+.serata {
+  margin: 0 0 22px;
+  padding: 12px 16px;
+  border: 1.5px solid var(--bianco);
+  border-radius: var(--raggio);
+  font-weight: 700;
+  text-align: center;
+}
+.serata[hidden] { display: none; }
+
+h1 {
+  margin: 0 0 14px;
+  font-weight: 700;
+  font-size: clamp(30px, 8.4vw, 38px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.attacco {
+  margin: 0 0 14px;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.testo { margin: 0 0 10px; color: var(--bianco-80); }
+
+.usi {
+  margin: 0 0 30px;
+  padding: 0;
+  list-style: none;
+  color: var(--bianco-80);
+}
+.usi li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 4px;
+}
+.usi li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 9px;
+  height: 9px;
+  border: 1.5px solid var(--bianco);
+  border-radius: 50%;
+}
+
+.passo {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bianco-80);
+}
+
+.importi {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.importo {
+  appearance: none;
+  height: 56px;
+  border: 1.5px solid var(--bianco);
+  border-radius: var(--raggio);
+  background: transparent;
+  color: var(--bianco);
+  font: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.importo[aria-pressed="true"] {
+  background: var(--bianco);
+  color: var(--rosso);
+}
+
+.libero {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 0 16px;
+  border: 1.5px solid var(--bianco);
+  border-radius: var(--raggio);
+  margin-bottom: 30px;
+  transition: background 0.15s, color 0.15s;
+}
+.libero.attivo { background: var(--bianco); color: var(--rosso); }
+.libero label {
+  flex: 0 0 auto;
+  font-weight: 700;
+  margin-right: 10px;
+}
+.libero input {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: right;
+}
+.libero input::placeholder { color: var(--bianco-60); }
+.libero.attivo input::placeholder { color: rgba(191, 38, 38, 0.5); }
+.libero .euro { margin-left: 6px; font-size: 20px; font-weight: 700; }
+.libero input::-webkit-outer-spin-button,
+.libero input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.libero input[type="number"] { -moz-appearance: textfield; }
+
+.errore {
+  margin: -20px 0 22px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.errore[hidden] { display: none; }
+
+.metodi { display: grid; gap: 12px; margin-bottom: 14px; }
+
+.metodo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  min-height: 64px;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: var(--raggio);
+  background: var(--bianco);
+  color: var(--rosso);
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+.metodo strong { font-size: 19px; font-weight: 700; line-height: 1.2; }
+.metodo span { font-size: 14px; font-weight: 500; opacity: 0.85; }
+.metodo:active { transform: scale(0.99); }
+
+.pannello-satispay {
+  margin: -2px 0 2px;
+  padding: 18px 18px 16px;
+  border: 1.5px solid var(--bianco);
+  border-radius: var(--raggio);
+}
+.pannello-satispay[hidden] { display: none; }
+.pannello-satispay p { margin: 0 0 12px; }
+.pannello-satispay .grande { font-size: 19px; font-weight: 700; }
+.pannello-satispay .nota { font-size: 14px; color: var(--bianco-80); }
+.pannello-satispay .azioni { display: grid; gap: 10px; }
+.secondario {
+  display: block;
+  padding: 12px 16px;
+  border: 1.5px solid var(--bianco);
+  border-radius: var(--raggio);
+  color: var(--bianco);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+.sicuro {
+  margin: 0 0 34px;
+  font-size: 14px;
+  color: var(--bianco-80);
+}
+
+.social { text-align: center; margin: 4px 0 30px; }
+.social p { margin: 0 0 14px; font-weight: 700; }
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 8px;
+  border: 1.5px solid var(--bianco);
+  border-radius: 50%;
+  color: var(--bianco);
+}
+.social-link svg { width: 24px; height: 24px; fill: currentColor; }
+
+footer {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--bianco-20);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--bianco-60);
+  text-align: center;
+}
+footer p { margin: 0 0 4px; }
+
+/* Pagina grazie */
+.grazie {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 0 30px;
+}
+.grazie h1 { font-size: clamp(48px, 15vw, 64px); margin-bottom: 16px; }
+.grazie .attacco { margin-bottom: 8px; }
+.grazie .testo { margin-bottom: 40px; }
+.grazie .social { margin-bottom: 24px; }
+.torna { font-size: 15px; color: var(--bianco-80); }
+
+:focus-visible { outline: 2px solid var(--bianco); outline-offset: 3px; }
