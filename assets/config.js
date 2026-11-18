@@ -12,7 +12,7 @@ window.FRENEL = {
 
   paypal: {
     email: "frenelstudio@gmail.com",
-    causale: "Donazione a Frenél Studio",
+    causale: "Contributo libero a Frenél Studio",
   },
 
   satispay: {

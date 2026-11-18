@@ -74,24 +74,31 @@
     return true;
   }
 
-  function linkPaypal() {
+  // Pagamento PayPal standard (non "donazione"): il conto Frenél non è abilitato alle donazioni.
+  function linkPaypal(carta) {
     var p = new URLSearchParams({
+      cmd: "_xclick",
       business: C.paypal.email,
+      item_name: C.paypal.causale,
       amount: importo.toFixed(2),
       currency_code: "EUR",
-      item_name: C.paypal.causale,
-      no_recurring: "1",
+      quantity: "1",
+      no_shipping: "1",
+      no_note: "1",
       lc: "IT",
+      rm: "1",
       return: C.baseUrl + "grazie.html",
       cancel_return: C.baseUrl,
     });
-    return "https://www.paypal.com/donate/?" + p.toString();
+    // Per la carta, chiede a PayPal di aprire direttamente il modulo di pagamento con carta
+    if (carta) p.set("landing_page", "billing");
+    return "https://www.paypal.com/cgi-bin/webscr?" + p.toString();
   }
 
   document.querySelectorAll("[data-paypal]").forEach(function (b) {
     b.addEventListener("click", function () {
       if (!valido()) return;
-      window.location.href = linkPaypal();
+      window.location.href = linkPaypal(b.getAttribute("data-paypal") === "carta");
     });
   });
 
