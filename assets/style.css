@@ -74,7 +74,7 @@ a { color: inherit; }
 .serata[hidden] { display: none; }
 
 h1 {
-  margin: 0 0 14px;
+  margin: 0 0 16px;
   font-weight: 700;
   font-size: clamp(30px, 8.4vw, 38px);
   line-height: 1.08;
@@ -104,10 +104,10 @@ h1 {
   content: "";
   position: absolute;
   left: 2px;
-  top: 0.62em;
-  width: 9px;
-  height: 9px;
-  border: 1.5px solid var(--bianco);
+  top: 0.56em;
+  width: 8px;
+  height: 8px;
+  background: var(--bianco);
   border-radius: 50%;
 }
 
