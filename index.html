@@ -18,7 +18,8 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <main class="pagina">
+  <main class="pagina home">
+    <div class="intro">
     <img class="logo" src="assets/marchio-w.svg" alt="Frenél Studio" width="168" height="150">
 
     <p class="serata" id="serata" hidden></p>
@@ -30,7 +31,9 @@
       <li>produrre e distribuire nuovo cinema indipendente</li>
       <li>aprire una sede: uno spazio dove il cinema si fa e si guarda</li>
     </ul>
+    </div>
 
+    <div class="modulo">
     <p class="passo">1 · Scegli l'importo</p>
     <div class="importi" id="importi" role="group" aria-label="Importo della donazione"></div>
     <div class="libero" id="libero-box">
@@ -49,6 +52,10 @@
 
       <div class="pannello-satispay" id="pannello-satispay" hidden>
         <p class="grande">Apri Satispay e inserisci <span id="importo-satispay"></span></p>
+        <div class="qr-satispay">
+          <img src="assets/qr-satispay.svg" alt="QR code Satispay" width="132" height="132">
+          <p>Dal computer? Inquadra il QR con la fotocamera del telefono: si apre Satispay.</p>
+        </div>
         <p class="nota">Il pagamento arriva sul conto Satispay di Andrea D'Eredità, legale rappresentante di Frenél Studio.</p>
         <div class="azioni">
           <a class="metodo" id="apri-satispay" href="#" target="_blank" rel="noopener">
@@ -69,6 +76,8 @@
       </button>
     </div>
     <p class="sicuro">Con la carta, su PayPal scegli “Paga con carta di debito o di credito”. I pagamenti avvengono sulle pagine sicure di Satispay e PayPal: questa pagina non vede né salva i tuoi dati.</p>
+
+    </div>
 
     <div class="social">
       <p>Seguici</p>

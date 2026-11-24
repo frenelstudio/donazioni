@@ -281,3 +281,57 @@ footer p { margin: 0 0 4px; }
 .torna { font-size: 15px; color: var(--bianco-80); }
 
 :focus-visible { outline: 2px solid var(--bianco); outline-offset: 3px; }
+
+/* QR Satispay: solo da computer */
+.qr-satispay { display: none; }
+
+/* Versione desktop */
+@media (min-width: 960px) {
+  .pagina.home {
+    max-width: 1120px;
+    padding: 56px 48px 32px;
+    display: grid;
+    grid-template-columns: 1fr 440px;
+    grid-template-areas:
+      "intro  modulo"
+      "social modulo"
+      "footer footer";
+    grid-template-rows: auto 1fr auto;
+    column-gap: 96px;
+  }
+  .home .intro { grid-area: intro; padding-top: 8px; }
+  .home .modulo {
+    grid-area: modulo;
+    align-self: start;
+    padding: 32px 32px 8px;
+    border: 1.5px solid var(--bianco-20);
+    border-radius: 22px;
+    background: rgba(0, 0, 0, 0.06);
+  }
+  .home .social { grid-area: social; text-align: left; margin-top: 8px; }
+  .home .social-link { margin: 0 14px 0 0; }
+  .home footer { grid-area: footer; margin-top: 56px; }
+  .home .logo { margin: 0 0 40px; width: 190px; }
+  .home h1 { font-size: 56px; margin-bottom: 24px; }
+  .home .testo { font-size: 19px; max-width: 36em; }
+  .home .usi { font-size: 19px; }
+  .home .serata { text-align: left; }
+  .metodo { transition: transform 0.15s, box-shadow 0.15s; }
+  .metodo:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18); }
+  .importo:hover { background: rgba(255, 255, 255, 0.12); }
+  .importo[aria-pressed="true"]:hover { background: var(--bianco); }
+  .social-link:hover { background: var(--bianco); color: var(--rosso); }
+  .qr-satispay {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 0 14px;
+  }
+  .qr-satispay img {
+    flex: 0 0 auto;
+    padding: 6px;
+    background: #fff;
+    border-radius: 8px;
+  }
+  .qr-satispay p { margin: 0; font-size: 15px; }
+}
